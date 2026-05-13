@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT</title>
+    <style>
+        *{
+            font: normal 20px arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, Mundo!</h1>
+    <p>Já me livrei da maldição!!</p>
+
+    <script>
+
+            // Usando para Números inteiros //
+
+        var n1 = Number.parseInt(window.prompt('Digite o primeiro numero: '))
+        var n2 = Number.parseInt(window.prompt('Digite o segundo valor: '))
+        var soma = n1 + n2
+        window.alert("A soma dos valores é " + String(soma))
+
+            // Usando para Números reias //
+
+        var n3 = Number.parseFloat(window.prompt('Digite o primeiro numero: '))
+        var n4 = Number.parseFloat(window.prompt('Digite o segundo número'))
+        var subtracao = n3 - n4
+        window.alert('A subtração dos dois números é: '+ String(subtracao))        
+
+            // Usando tanto para Números Inteiros e Reais //
+
+        var n5 = Number(window.prompt('Digite o primeiro o número: '))
+        var n6 = Number(window.prompt('Digite o segundo número: '))
+        var multiplicacao= n5 * n6 
+        window.alert(`A multiplicação entre ${n5} e ${n6} é igual a ${multiplicacao}`)
+
+
+            // Caractere //
+
+        var nome = window.prompt('Qaul o seu nome: ')
+        window.alert('Seja Bem-Vindo ao Meu Mundo, ' + nome)
+
+        // Mundando o formatos das letras //
+
+        var nome2 = window.prompt('Qual o seu nome completo? ')
+
+        document.write(`Seu <strong>${nome2}</strong> tem ${nome2.length} letras. <br>`) // Conta as letras
+        document.write(`Seu ${nome2} em Maiúsculos fica dessa maneira: ${nome2.toUpperCase()}<br>`) // Transforma em letras MAIÚSCULAS
+        document.write(`Seu ${nome2} em letras minúsculas fica dessa meneira: ${nome2.toLowerCase()}`) // Transforma em letras Minúsculas
+
+
+    </script>
+</body>
+</html>
