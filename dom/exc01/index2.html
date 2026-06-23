@@ -27,15 +27,17 @@
 
     <script>
         function somar() {
-            var tn1 = window.document.getElementById('txtn1')
-            var tn2 = window.document.querySelector('input#txtn2')
-            var res = window.document.getElementById('res')
 
-            var n1 = Number(tn1.value)
-            var n2 = Number(tn2.value)
-            var s = n1 + n2
+            let inputNumero1 = document.getElementById('txtn1') // Primeiro campo de número
+            let inputNumero2 = document.querySelector('input#txtn2') // Segundo campo de número
+            let divResultado = document.getElementById('res') // Área onde aparece o resultado
 
-            res.innerHTML = `A soma entre ${n1} e ${n2} é igual a <strong>${s}</strong>`
+            let numero1 = Number(inputNumero1.value) // Converte o valor do primeiro input para número
+            let numero2 = Number(inputNumero2.value) // Converte o valor do segundo input para número
+
+            let resultadoSoma = numero1 + numero2 // Faz a soma dos dois números
+
+            divResultado.innerHTML = `A soma entre ${numero1} e ${numero2} é igual a <strong>${resultadoSoma}</strong>` // Mostra o resultado na tela
         }
     </script>
 

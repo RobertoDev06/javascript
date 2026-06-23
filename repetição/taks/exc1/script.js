@@ -1,34 +1,47 @@
 function contar() {
-    let ini = document.getElementById('txti')
-    let fim = document.getElementById('txtf')
-    let passo = document.getElementById('txtp')
-    let res = document.getElementById('res')
 
-    if (ini.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {
-        res.innerHTML = 'Impossível contar!'
-        // window.alert('[ERRO] Faltam dados!')
+    let inputInicio = document.getElementById('txti') // Campo do número inicial
+    let inputFim = document.getElementById('txtf') // Campo do número final
+    let inputPasso = document.getElementById('txtp') // Campo do passo (intervalo)
+    let divResultado = document.getElementById('res') // Área onde o resultado aparece
+
+    // Verifica se algum campo está vazio
+    if (
+        inputInicio.value.length == 0 ||
+        inputFim.value.length == 0 ||
+        inputPasso.value.length == 0
+    ) {
+        divResultado.innerHTML = 'Impossível contar!' // Mensagem de erro
     } else {
-        res.innerHTML = 'Contando: <br>'
-        let i = Number(ini.value)
-        let f = Number(fim.value)
-        let p = Number(passo.value)
 
-        if (p <= 0) {
+        divResultado.innerHTML = 'Contando: <br>' // Texto inicial da contagem
+
+        let numeroInicio = Number(inputInicio.value) // Converte início para número
+        let numeroFim = Number(inputFim.value) // Converte fim para número
+        let numeroPasso = Number(inputPasso.value) // Converte passo para número
+
+        // Se o passo for inválido (0 ou negativo)
+        if (numeroPasso <= 0) {
             window.alert('Passo inválido! Considerando PASSO 1')
-            p = 1
+            numeroPasso = 1
         }
 
-        if (i < f) {
-            // Contagem crescente
-            for(let c = i; c <= f; c += p) {
-                res.innerHTML += ` ${c} \u{1F449}`
+        // Contagem crescente
+        if (numeroInicio < numeroFim) {
+
+            for (let contador = numeroInicio; contador <= numeroFim; contador += numeroPasso) {
+                divResultado.innerHTML += ` ${contador} 👉`
             }
-        } else {
-            // Contagem regressiva
-            for(let c = i; c >= f; c -= p) {
-                res.innerHTML += ` ${c} \u{1F449}`
+
+        } 
+        // Contagem regressiva
+        else {
+
+            for (let contador = numeroInicio; contador >= numeroFim; contador -= numeroPasso) {
+                divResultado.innerHTML += ` ${contador} 👉`
             }
         }
-        res.innerHTML += `\u{1F3C1}`
+
+        divResultado.innerHTML += `🏁` // Final da contagem
     }
 }

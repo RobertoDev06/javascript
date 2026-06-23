@@ -1,29 +1,33 @@
 function tabuada() {
-    let num = document.getElementById('txtn')
-    let tab = document.getElementById('seltab')
 
-    if (num.value.length == 0) {
+    let inputNumero = document.getElementById('txtn') // Campo onde o usuário digita o número
+    let selectTabuada = document.getElementById('seltab') // Lista onde a tabuada será exibida
+
+    // Verifica se o campo está vazio
+    if (inputNumero.value.length == 0) {
         window.alert('Por favor, digite um número!')
     } else {
-        let n = Number(num.value)
-        let c = 1
-        
-        // Limpa a tabela anterior antes de começar a mostrar a nova
-        tab.innerHTML = ''
 
-        while (c <= 10) {
-            let item = document.createElement('option')
-            
-            // Usando Template Strings para formatar o texto (ex: 6 x 1 = 6)
-            item.text = `${n} x ${c} = ${n * c}`
-            
-            // Define o value de cada option
-            item.value = `tab${c}`
-            
-            // Adiciona o elemento option criado dentro do select
-            tab.appendChild(item)
-            
-            c++
+        let numeroBase = Number(inputNumero.value) // Converte o valor digitado para número
+        let contador = 1 // Começa a tabuada no 1
+
+        selectTabuada.innerHTML = '' // Limpa resultados antigos antes de gerar nova tabuada
+
+        // Gera a tabuada de 1 até 10
+        while (contador <= 10) {
+
+            let itemOption = document.createElement('option') // Cria um item da lista
+
+            // Define o texto que aparece na tabuada (ex: 5 x 1 = 5)
+            itemOption.text = `${numeroBase} x ${contador} = ${numeroBase * contador}`
+
+            // Valor interno do option (não aparece para o usuário)
+            itemOption.value = `tab${contador}`
+
+            // Adiciona o item dentro do select
+            selectTabuada.appendChild(itemOption)
+
+            contador++ // Incrementa o contador
         }
     }
 }
